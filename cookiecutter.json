@@ -6,6 +6,6 @@
     "dashboard_password_hash":"run htpassword -n {dashboard_password}",
     "dashboard_use_le":false,
     "domain_root":"example.com",
-    "domain_traefik":"tf.{{domain_root}}",
-    "domain_frps":"frps.{{domain_root}}"
+    "domain_traefik":"tf.{domain_root}",
+    "domain_frps":"frps.{domain_root}"
   }
