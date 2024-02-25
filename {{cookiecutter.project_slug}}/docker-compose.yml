@@ -15,7 +15,7 @@ services:
       - ./config/traefik.toml:/traefik.toml
       - ./config/traefik_secure.toml:/traefik_secure.toml
       - ./acme.json:/acme.json
-      - "{{log_path}}/tf:/var/log/tf"
+      - "{{cookiecutter.log_path}}/tf:/var/log/tf"
 
 
   frps:
@@ -24,7 +24,7 @@ services:
     restart: always
     volumes:
       - ./config/frps.toml:/etc/frp/frps.toml
-      - "{{log_path}}/log/frps:/var/log/frps"
+      - "{{cookiecutter.log_path}}/log/frps:/var/log/frps"
 
     networks:
       - web
