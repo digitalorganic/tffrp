@@ -4,6 +4,7 @@
     "log_path": "${HOME}/log",
     "dashboard_user": "do",
     "dashboard_password": "mypassword",
+    "dashboard_password_hash": "generate_password_hash.sh",
     "email": "admin@example.com",
     "dashboard_use_le":true,
     "domain_root":"example.com",
