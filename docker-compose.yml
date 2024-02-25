@@ -1,0 +1,51 @@
+version: "3.7"
+
+services:
+  traefik:
+    restart: always
+    image: "traefik:v2.11"
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - web
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - ./config/traefik.toml:/traefik.toml
+      - ./config/traefik_secure.toml:/traefik_secure.toml
+      - ./acme.json:/acme.json
+      - "{{log_path}}/tf:/var/log/tf"
+
+
+  frps:
+    container_name: frps 
+    image: snowdreamtech/frps:0.54.0
+    restart: always
+    volumes:
+      - ./config/frps.toml:/etc/frp/frps.toml
+      - "{{log_path}}/log/frps:/var/log/frps"
+
+    networks:
+      - web
+
+    ports:
+      - "7500"      # frps admin
+      - "8080"      # local frp webserver , for traefik forward
+      - "7000:7000" # client connection
+
+    labels:
+      
+      - traefik.http.routers.frps.service=frps
+      - traefik.http.routers.frps.rule=Host(`{{domain_frps}}`)
+      - traefik.http.routers.frps.tls=true
+      - traefik.http.services.frps.loadbalancer.server.port=7500
+      {%- if cookiecutter.dashboard_use_le == True -%}
+      # generate ssl via letsencrypt
+      - traefik.http.routers.frps.tls.certresolver=lets-encrypt
+      {% endif %}
+
+networks:
+  web:
+    external: true
+
