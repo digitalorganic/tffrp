@@ -3,7 +3,7 @@
     "dashboard_user": "do",
     "dashboard_password": "mypassword",
     "email": "admin@example.com",
-    "dashboard_password_hash":"run htpassword -n {{dashboard_password}}",
+    "dashboard_password_hash":"run htpassword -n {dashboard_password}",
     "dashboard_use_le":false,
     "domain_root":"example.com",
     "domain_traefik":"tf.{{domain_root}}",
