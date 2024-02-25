@@ -37,7 +37,7 @@ services:
     labels:
       
       - traefik.http.routers.frps.service=frps
-      - traefik.http.routers.frps.rule=Host(`{{domain_frps}}`)
+      - traefik.http.routers.frps.rule=Host(`{{cookiecutter.domain_frps}}`)
       - traefik.http.routers.frps.tls=true
       - traefik.http.services.frps.loadbalancer.server.port=7500
       {%- if cookiecutter.dashboard_use_le == True -%}
