@@ -5,7 +5,6 @@
     "dashboard_user": "do",
     "dashboard_password": "mypassword",
     "email": "admin@example.com",
-    "dashboard_password_hash":"run htpassword -n {{cookiecutter.dashboard_password}}",
     "dashboard_use_le":true,
     "domain_root":"example.com",
     "domain_traefik":"tf.{{cookiecutter.domain_root}}",
