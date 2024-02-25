@@ -10,7 +10,7 @@
 [api]
   dashboard = true
 [certificatesResolvers.lets-encrypt.acme]
-  email = "{{email}}"
+  email = "{{cookiecutter.email}}"
   storage = "acme.json"
   [certificatesResolvers.lets-encrypt.acme.tlsChallenge]
 
@@ -22,5 +22,5 @@
   filename = "traefik_secure.toml"
 
 [accessLog]
-  filePath = "{{log_path}}/tf/access.log"
+  filePath = "{{cookiecutter.log_path}}/tf/access.log"
   format = "json"

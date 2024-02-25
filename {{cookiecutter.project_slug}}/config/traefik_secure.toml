@@ -1,10 +1,10 @@
 [http.middlewares.simpleAuth.basicAuth]
   users = [
-	"{{dashboard_user}}:{{dashboard_password_hash}}"
+	"{{cookiecutter.dashboard_user}}:{{cookiecutter.dashboard_password_hash}}"
   ]
 
 [http.routers.api]
-  rule = "Host(`{{domain_traefik}}`)"
+  rule = "Host(`{{cookiecutter.domain_traefik}}`)"
   entrypoints = ["websecure"]
   middlewares = ["simpleAuth"]
   service = "api@internal"
