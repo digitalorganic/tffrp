@@ -24,7 +24,7 @@ services:
     restart: always
     volumes:
       - ./config/frps.toml:/etc/frp/frps.toml
-      - "{{cookiecutter.log_path}}/log/frps:/var/log/frps"
+      - "{{cookiecutter.log_path}}/frps:/var/log/frps"
 
     networks:
       - web
@@ -41,7 +41,7 @@ services:
       - traefik.http.routers.frps.tls=true
       - traefik.http.services.frps.loadbalancer.server.port=7500
       {%- if cookiecutter.dashboard_use_le == True -%}
-      
+
       # generate ssl via letsencrypt
       - traefik.http.routers.frps.tls.certresolver=lets-encrypt
       {% endif %}
