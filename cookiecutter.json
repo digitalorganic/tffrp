@@ -1,4 +1,6 @@
 {
+  "project_name": "Sample project",
+  "project_slug": "sample-project",
     "log_path": "${HOME}/log",
     "dashboard_user": "do",
     "dashboard_password": "mypassword",
