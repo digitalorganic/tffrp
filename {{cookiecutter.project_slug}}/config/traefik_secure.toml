@@ -9,7 +9,6 @@
   middlewares = ["simpleAuth"]
   service = "api@internal"
   [http.routers.api.tls]
-{%- if cookiecutter.dashboard_use_le == True -%}
-
+{% if cookiecutter.dashboard_use_le == True %}
     certResolver = "lets-encrypt"
 {% endif %}
