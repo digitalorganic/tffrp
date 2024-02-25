@@ -22,5 +22,5 @@
   filename = "traefik_secure.toml"
 
 [accessLog]
-  filePath = "{{cookiecutter.log_path}}/tf/access.log"
+  filePath = "/var/log/tf/access.log"
   format = "json"
