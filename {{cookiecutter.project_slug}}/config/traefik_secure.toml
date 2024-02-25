@@ -1,0 +1,14 @@
+[http.middlewares.simpleAuth.basicAuth]
+  users = [
+	"{{dashboard_user}}:{{dashboard_password_hash}}"
+  ]
+
+[http.routers.api]
+  rule = "Host(`{{domain_traefik}}`)"
+  entrypoints = ["websecure"]
+  middlewares = ["simpleAuth"]
+  service = "api@internal"
+  [http.routers.api.tls]
+{%- if cookiecutter.dashboard_use_le == True -%}
+    certResolver = "lets-encrypt"
+{% endif %}
