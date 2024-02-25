@@ -9,5 +9,6 @@
     "dashboard_use_le":true,
     "domain_root":"example.com",
     "domain_traefik":"tf.{{cookiecutter.domain_root}}",
-    "domain_frps":"frps.{{cookiecutter.domain_root}}"
+    "domain_frps":"frps.{{cookiecutter.domain_root}}",
+    "frps_token":"generate_random_password.sh 128"
   }
