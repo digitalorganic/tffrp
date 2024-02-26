@@ -27,3 +27,6 @@
 
 [metrics]
   [metrics.prometheus]
+  
+[tracing]
+  [tracing.jaeger]
