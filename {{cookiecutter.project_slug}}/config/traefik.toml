@@ -24,3 +24,6 @@
 [accessLog]
   filePath = "/var/log/tf/access.log"
   format = "json"
+
+[metrics]
+  [metrics.prometheus]
