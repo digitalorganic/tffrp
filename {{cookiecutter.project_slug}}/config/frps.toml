@@ -16,3 +16,5 @@ log.level = "info"
 log.maxDays = 3
 # disable log colors when log.to is console, default is false
 log.disablePrintColor = false
+
+enablePrometheus = true
