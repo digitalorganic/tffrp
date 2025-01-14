@@ -18,3 +18,6 @@ log.maxDays = 3
 log.disablePrintColor = false
 
 enablePrometheus = true
+
+transport.heartbeatTimeout = 60
+maxPortsPerClient = 5
