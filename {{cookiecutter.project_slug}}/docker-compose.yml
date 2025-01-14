@@ -29,9 +29,10 @@ services:
     networks:
       - web
 
-    ports:
+    expose:
       - "7500"      # frps admin
-      - "8080"      # local frp webserver , for traefik forward
+      - "8123"      # local frp webserver , for traefik forward
+    ports:
       - "7000:7000" # client connection
 
     labels:
