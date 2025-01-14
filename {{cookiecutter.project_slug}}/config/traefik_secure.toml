@@ -1,6 +1,6 @@
 [http.middlewares.simpleAuth.basicAuth]
   users = [
-	"{{cookiecutter.dashboard_user}}:{{cookiecutter.dashboard_password_hash}}"
+	"{{cookiecutter.dashboard_password_hash}}"
   ]
 
 [http.routers.api]
