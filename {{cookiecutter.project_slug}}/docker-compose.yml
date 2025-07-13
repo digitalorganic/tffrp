@@ -20,7 +20,7 @@ services:
 
   frps:
     container_name: frps 
-    image: snowdreamtech/frps:0.54.0
+    image: snowdreamtech/frps:0.63.0
     restart: always
     volumes:
       - ./config/frps.toml:/etc/frp/frps.toml
