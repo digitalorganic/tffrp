@@ -21,9 +21,9 @@
 [providers.file]
   filename = "traefik_secure.toml"
 
-[accessLog]
-  filePath = "/var/log/tf/access.log"
-  format = "json"
+# [accessLog]
+#   filePath = "/var/log/tf/access.log"
+#   format = "json"
 
 [metrics]
   [metrics.prometheus]
