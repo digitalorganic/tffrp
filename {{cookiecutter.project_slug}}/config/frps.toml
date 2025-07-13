@@ -10,7 +10,7 @@ webServer.password = "{{cookiecutter.dashboard_password}}"
 auth.method = "token"
 auth.token = "{{cookiecutter.frps_token}}"
 
-log.to = "/var/log/frps/frps.log"
+# log.to = "/var/log/frps/frps.log"
 # trace, debug, info, warn, error
 log.level = "info"
 log.maxDays = 3
